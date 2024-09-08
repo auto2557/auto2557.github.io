@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFXIV Raid Bosses</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home"><img src="/Frontend/imges/boss/Final_Fantasy_XIV_Online_logo.png" alt="Icon" class="nav-icon"></a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 id="home">FFXIV Raid Bosses</h1>
+        <p>Select an expansion to view its raid bosses:</p>
+        <div class="buttons">
+            <button onclick="showBosses('alexander')">
+                <img src="/Frontend/imges/button/heavensward.png" alt="Alexander" class="icon">
+              
+            </button>
+            <button onclick="showBosses('omega')">
+                <img src="/Frontend/imges/button/stormblood.png" alt="Omega" class="icon">
+             
+            </button>
+            <button onclick="showBosses('eden')">
+                <img src="/Frontend/imges/button/shadow.png" alt="Eden" class="icon">
+              
+            </button>
+            <button onclick="showBosses('pandaemonium')">
+                <img src="/Frontend/imges/button/endwalker.png" alt="Pandæmonium" class="icon">
+          
+            </button>
+            <button onclick="showBosses('dawntrail')">
+                <img src="/Frontend/imges/button/dawn.png" alt="Dawntrail" class="icon">
+        
+            </button>
+        </div>
+        
+        <div id="boss-list"></div>
+        <div id="boss-details"></div> <!-- To display details about the boss -->
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 FFXIV Raid Guide. All Rights Reserved.</p>
+        <p><a href="#home">Back to top</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
