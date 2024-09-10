@@ -3,7 +3,7 @@ const bosses = {
         {
             name: "Oppressor",
             description: "Oppressor is a mechanical boss in Alexander's raid series. It uses devastating tank busters and AoE attacks, requiring careful positioning and coordination between healers and tanks.",
-            image: "./imges/boss/heavensward/opessor.jpg",
+            image: "./imges/boss/heavensward/opessor.webp",
             skills: [
                 { 
                     name: "Mega Beam", 
@@ -26,7 +26,7 @@ const bosses = {
         {
             name: "Living Liquid",
             description: "Living Liquid features a unique transformation mechanic. It requires players to adapt to changing forms, which include a hand, a leg, and even a large tornado form.",
-            image: "./imges/boss/heavensward/living.png",
+            image: "./imges/boss/heavensward/living.webp",
             skills: [
                 { 
                     name: "Fluid Strike", 
@@ -49,7 +49,7 @@ const bosses = {
         {
             name: "Brute Justice",
             description: "Brute Justice is a fusion of the bosses Blaster, Brawler, Vortexer, and Swindler, combining their abilities into a powerful new form.",
-            image: "./imges/boss/heavensward/Brute.jpg",
+            image: "./imges/boss/heavensward/Brute.webp",
             skills: [
                 { 
                     name: "Apocalyptic Ray", 
@@ -72,7 +72,7 @@ const bosses = {
         {
             name: "Cruise Chaser",
             description: "Cruise Chaser is a mechanical boss equipped with advanced weaponry and powerful lasers. It transforms into a powerful mecha, increasing its mobility and attack speed.",
-            image: "./imges/boss/heavensward/Cruise Chaser.jpg",
+            image: "./imges/boss/heavensward/Cruise Chaser.webp",
             skills: [
                 { 
                     name: "Photon", 
@@ -99,7 +99,7 @@ const bosses = {
         {
             name: "Omega",
             description: "Omega is a powerful mechanical being with the ability to replicate itself and others. Its raid involves challenging mechanics that test the coordination of the party.",
-            image: "./imges/boss/stormblood/omega.jpg",
+            image: "./imges/boss/stormblood/omega.webp",
             skills: [
                 { 
                     name: "Hyper Pulse", 
@@ -146,7 +146,7 @@ const bosses = {
         {
             name: "Kefka",
             description: "Kefka is the final boss of one of the Omega tiers. Known for his chaotic and unpredictable attacks, the fight challenges players with random debuffs and AoE patterns.",
-            image: "./imges/boss/stormblood/kefka.avif",
+            image: "./imges/boss/stormblood/kefka.webp",
             skills: [
                 { 
                     name: "Light of Judgment", 
@@ -194,7 +194,7 @@ const bosses = {
         {
             name: "Eden Prime",
             description: "Eden Prime is the first boss in the Eden raid series, using a combination of light and dark attacks to challenge players with positional mechanics.",
-            image: "./imges/boss/shadow/Eden Prime.jpeg",
+            image: "./imges/boss/shadow/Eden Prime.webp",
             skills: [
                 { 
                     name: "Eternal Breath", 
@@ -311,7 +311,7 @@ const bosses = {
         {
             name: "Phoinix",
             description: "Phoinix uses a combination of fire and resurrection mechanics, forcing players to carefully handle phase transitions to avoid being overwhelmed.",
-            image: "./imges/boss/endwalker/Phoinix.jpg",
+            image: "./imges/boss/endwalker/Phoinix.webp",
             skills: [
                 { 
                     name: "Wings of Flame", 
@@ -334,7 +334,7 @@ const bosses = {
         {
             name: "Erichthonios",
             description: "Erichthonios is a towering foe who challenges players with brute force and multi-target attacks. Coordination and timing are key to surviving his enrage.",
-            image: "./imges/boss/endwalker/Erichthonios.jpg",
+            image: "./imges/boss/endwalker/Erichthonios.webp",
             skills: [
                 { 
                     name: "Aetherial Shackles", 
@@ -357,7 +357,7 @@ const bosses = {
         {
             name: "Lahabrea",
             description: "Lahabrea is the final boss of the Pandæmonium raid, presenting a series of memory and flame-based mechanics that test the reflexes and coordination of the party.",
-            image: "./imges/boss/endwalker/Lahabrea.jpg",
+            image: "./imges/boss/endwalker/Lahabrea.webp",
             skills: [
                 { 
                     name: "Pyretic Memory", 
@@ -383,7 +383,7 @@ const bosses = {
         {
             name: "Tlaloc",
             description: "Tlaloc is the first boss in the Dawntrail raid series, drawing power from storms and weather-based mechanics. Players need to adapt to changing environmental conditions to avoid devastating attacks.",
-            image: "./imges/boss/dawn/Tlaloc.jpg",
+            image: "./imges/boss/dawn/Tlaloc.webp",
             skills: [
                 { 
                     name: "Storm Surge", 
@@ -429,7 +429,7 @@ const bosses = {
         {
             name: "Ix Chel",
             description: "Ix Chel is a healer-type boss that tests the raid's coordination with healing debuffs and phases that require coordinated dispels and interrupts.",
-            image: "./imges/boss/dawn/Ix Chel.jpg",
+            image: "./imges/boss/dawn/Ix Chel.webp",
             skills: [
                 { 
                     name: "Curse of Healing", 
@@ -452,7 +452,7 @@ const bosses = {
         {
             name: "Ah Puch",
             description: "Ah Puch, the god of death, uses mechanics centered around curses and deathly shadows. Players must manage curse timers and coordinate their movements to survive his onslaught.",
-            image: "./imges/boss/dawn/Ah Puch.jfif",
+            image: "./imges/boss/dawn/Ah Puch.webp",
             skills: [
                 { 
                     name: "Curse of Death", 
