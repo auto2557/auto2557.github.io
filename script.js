@@ -146,7 +146,7 @@ const bosses = {
         {
             name: "Kefka",
             description: "Kefka is the final boss of one of the Omega tiers. Known for his chaotic and unpredictable attacks, the fight challenges players with random debuffs and AoE patterns.",
-            image: "./imges/boss/stormblood/kefka.webp",
+            image: "./imges/boss/stormblood/Kefka.webp",
             skills: [
                 { 
                     name: "Light of Judgment", 
