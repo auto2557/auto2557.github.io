@@ -1,21 +1,20 @@
-/* Reset some default styles */
+/* General Reset */
 body, h1, h2, p, ul {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     background-image: url('./imges/background/w1.webp'); /* Path to your background image */
     background-size: cover; /* Ensures the image covers the entire background */
     background-position: center; /* Centers the image */
     background-attachment: fixed; /* Keeps the background fixed when scrolling */
-    padding: 0;
-    padding-bottom: 100px; /* เพิ่มพื้นที่ด้านล่างเพื่อป้องกันการทับซ้อนกับ footer */
+    padding-bottom: 100px; /* Prevents footer overlap */
 }
 
-/* Navigation Bar */
 nav {
     background-color: #007bff;
     padding: 10px;
@@ -27,6 +26,7 @@ nav ul {
     justify-content: flex-start;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap; /* Makes sure the navigation is responsive */
 }
 
 nav ul li {
@@ -46,7 +46,7 @@ nav ul li a {
     border-radius: 8px;
 }
 
-/* Main Content */
+/* Container */
 .container {
     max-width: 800px;
     margin: 20px auto;
@@ -56,47 +56,46 @@ nav ul li a {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Headings */
 h1 {
     text-align: center;
     color: #333;
 }
 
+/* Buttons */
 .buttons {
     display: flex;
-    flex-wrap: wrap; 
-    gap: 10px; 
-    justify-content: center; 
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
     margin: 20px 0;
 }
 
 .buttons button {
     display: flex;
-    align-items: center; 
-    justify-content: center; 
-    padding: 10px 20px; 
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
     border: none;
-    background-color: #f0f0f0; 
-    cursor: pointer; 
+    background-color: #f0f0f0;
+    cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s; 
-    position: relative; 
+    transition: background-color 0.3s;
+    position: relative;
 }
 
 .buttons button:hover {
-    background-color: #ddd; /
+    background-color: #ddd;
 }
 
 .buttons .icon {
-    width: 40%; 
-    height: auto; 
-    margin-right: 10px; 
-    display: block; 
+    width: 40%;
+    height: auto;
+    margin-right: 10px;
+    display: block;
 }
 
-
-
-
-/* Style the boss list */
+/* Boss List */
 #boss-list ul {
     list-style-type: none;
     padding: 0;
@@ -105,44 +104,23 @@ h1 {
 #boss-list li {
     margin: 10px 0;
     padding: 10px;
-    background-color: #f0f8ff; /* Light background */
-    border-left: 5px solid #007bff; /* Blue vertical line on the left */
+    background-color: #f0f8ff;
+    border-left: 5px solid #007bff;
     border-radius: 4px;
     font-size: 18px;
     color: #333;
     transition: background-color 0.3s ease;
 }
 
-/* Hover effect on boss names */
 #boss-list li:hover {
-    background-color: #e0f0ff; /* Slightly darker background on hover */
+    background-color: #e0f0ff;
 }
 
-/* Boss name links */
+/* Boss Links */
 #boss-list a {
     text-decoration: none;
-    color: #007bff; /* Blue text color */
+    color: #007bff;
     font-weight: bold;
-}
-
-/* Responsive layout */
-#boss-list, #boss-details {
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-li {
-    margin: 10px 0;
-    padding: 10px;
-    border-left: 4px solid #007bff;
 }
 
 /* Footer */
@@ -165,7 +143,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Boss details section */
+/* Boss Details */
 .boss-details-container {
     display: flex;
     flex-direction: column;
@@ -200,5 +178,48 @@ ul li {
     margin: 5px 0;
 }
 
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%; /* Full-width for tablets and small desktops */
+    }
 
+    h1 {
+        font-size: 24px;
+    }
 
+    #boss-list li {
+        font-size: 16px; /* Slightly smaller font for smaller screens */
+        padding: 8px;
+    }
+
+    .buttons button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .buttons button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    
+    #boss-list li {
+        font-size: 14px;
+        padding: 5px;
+    }
+}
