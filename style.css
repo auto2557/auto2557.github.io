@@ -1,18 +1,19 @@
-/* General Reset */
+
 body, h1, h2, p, ul {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Global Styles */
+
 body {
     font-family: Arial, sans-serif;
-    background-image: url('./imges/background/w1.webp'); /* Path to your background image */
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-position: center; /* Centers the image */
-    background-attachment: fixed; /* Keeps the background fixed when scrolling */
-    padding-bottom: 100px; /* Prevents footer overlap */
+    background-image: url('./imges/background/w1.webp'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-bottom: 100px;
+    color: #333;
 }
 
 nav {
@@ -24,9 +25,9 @@ nav ul {
     list-style-type: none;
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap; /* Makes sure the navigation is responsive */
 }
 
 nav ul li {
@@ -40,29 +41,31 @@ nav ul li a {
 }
 
 .nav-icon {
-    width: 150px; 
+    width: 150px;
     height: auto;
     filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
     border-radius: 8px;
 }
 
-/* Container */
+
 .container {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Headings */
+
 h1 {
     text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
     color: #333;
 }
 
-/* Buttons */
+
 .buttons {
     display: flex;
     flex-wrap: wrap;
@@ -72,16 +75,16 @@ h1 {
 }
 
 .buttons button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 10px 20px;
     border: none;
     background-color: #f0f0f0;
     cursor: pointer;
-    font-size: 16px;
     transition: background-color 0.3s;
     position: relative;
+    flex: 1 1 calc(33.33% - 20px); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttons button:hover {
@@ -89,13 +92,13 @@ h1 {
 }
 
 .buttons .icon {
-    width: 40%;
+    width: 100%;
     height: auto;
     margin-right: 10px;
     display: block;
 }
 
-/* Boss List */
+
 #boss-list ul {
     list-style-type: none;
     padding: 0;
@@ -107,23 +110,22 @@ h1 {
     background-color: #f0f8ff;
     border-left: 5px solid #007bff;
     border-radius: 4px;
-    font-size: 18px;
-    color: #333;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    transition: background-color 0.3s;
 }
 
 #boss-list li:hover {
     background-color: #e0f0ff;
 }
 
-/* Boss Links */
+
 #boss-list a {
     text-decoration: none;
     color: #007bff;
     font-weight: bold;
 }
 
-/* Footer */
+
 footer {
     background-color: #333;
     color: white;
@@ -143,7 +145,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Boss Details */
+
 .boss-details-container {
     display: flex;
     flex-direction: column;
@@ -159,8 +161,7 @@ footer a:hover {
 .boss-details p {
     text-align: justify;
     margin-top: 15px;
-    color: #333;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 h4 {
@@ -171,31 +172,30 @@ h4 {
 ul {
     list-style-type: disc;
     margin-left: 20px;
-    color: #333;
+    font-size: 1rem;
 }
 
 ul li {
     margin: 5px 0;
 }
 
-/* Media Queries for Responsive Design */
+
 @media (max-width: 768px) {
     .container {
-        max-width: 95%; /* Full-width for tablets and small desktops */
+        max-width: 95%;
     }
 
     h1 {
-        font-size: 24px;
-    }
-
-    #boss-list li {
-        font-size: 16px; /* Slightly smaller font for smaller screens */
-        padding: 8px;
+        font-size: 1.8rem;
     }
 
     .buttons button {
-        padding: 8px 15px;
-        font-size: 14px;
+        flex: 1 1 calc(50% - 20px);
+        padding: 8px;
+    }
+
+    #boss-list li {
+        font-size: 0.9rem;
     }
 }
 
@@ -210,16 +210,20 @@ ul li {
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 1.5rem;
     }
 
     .buttons button {
+        flex: 1 1 100%;
         padding: 5px 10px;
-        font-size: 12px;
     }
-    
+
     #boss-list li {
-        font-size: 14px;
+        font-size: 0.8rem;
         padding: 5px;
+    }
+
+    .boss-details p {
+        font-size: 0.9rem;
     }
 }
