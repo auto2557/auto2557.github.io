@@ -523,3 +523,15 @@ function showBossDetails(expansion, index) {
     
     bossDetails.scrollIntoView({ behavior: 'smooth' });
 }
+
+window.addEventListener('load', () => {
+    const container = document.querySelector('.container');
+    const buttons = document.querySelectorAll('.buttons button');
+
+    // Add class to trigger the animation when the page loads
+    container.classList.add('animate');
+    buttons.forEach((button, index) => {
+        button.style.animationDelay = `${index * 0.2}s`; // Add delay to each button
+    });
+});
+

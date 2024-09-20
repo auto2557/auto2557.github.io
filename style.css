@@ -249,3 +249,122 @@ ul li {
         font-size: 0.9rem;
     }
 }
+
+/* Apply slide-in animation to the container */
+.container {
+    opacity: 0;
+    animation: slideInFromLeft 1s ease-out forwards; /* Trigger the animation */
+}
+
+/* General style for all buttons */
+.buttons button {
+    opacity: 0;
+    animation: slideInFromRight 0.7s ease-out forwards;
+}
+
+/* Stagger the animations for each button */
+.buttons button:nth-child(1) {
+    animation-delay: 0.5s; /* First button appears after 0.5s */
+}
+
+.buttons button:nth-child(2) {
+    animation-delay: 0.7s; /* Second button appears after 0.7s */
+}
+
+.buttons button:nth-child(3) {
+    animation-delay: 0.9s; /* Third button appears after 0.9s */
+}
+
+.buttons button:nth-child(4) {
+    animation-delay: 1.1s; /* Fourth button appears after 1.1s */
+}
+
+.buttons button:nth-child(5) {
+    animation-delay: 1.3s; /* Fifth button appears after 1.3s */
+}
+
+/* Slide-in animations for container and buttons */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px); /* Slide in from the left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Slide into place */
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px); /* Slide in from the right */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Slide into place */
+    }
+}
+
+
+/* Animation for Navbar */
+@keyframes navSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px); /* Slide down from top */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav {
+    animation: navSlideDown 1s ease-out;
+}
+
+/* Animation for Footer */
+@keyframes footerSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Slide up from bottom */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    animation: footerSlideUp 1.2s ease-out;
+}
+
+/* Animation for Logo */
+@keyframes logoFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5); /* Logo grows in size */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.logo {
+    animation: logoFadeIn 1s ease-out;
+    animation-delay: 0.5s; /* Add delay for better effect */
+}
+
+/* Optional: Make sure the rest of the content slides in after the navbar and footer animations */
+.container {
+    animation-delay: 1s;
+}
+
+/* Delay button animations slightly to avoid overlap */
+.buttons button {
+    animation-delay: 1.5s; /* Delay increased for smooth transition after container */
+}
+
+
+
