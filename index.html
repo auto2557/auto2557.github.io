@@ -21,33 +21,29 @@
     <div class="container">
         <h1 id="home">FFXIV Raid Bosses</h1>
         <p>Select an expansion to view its raid bosses:</p>
-        <div class="buttons">
+        
+        <div id="expansion-selection" class="buttons">
             <button onclick="showBosses('alexander')">
                 <img src="./imges/button/heavensward.webp" alt="Alexander" class="icon">
-              
             </button>
             <button onclick="showBosses('omega')">
                 <img src="./imges/button/stormblood.webp" alt="Omega" class="icon">
-             
             </button>
             <button onclick="showBosses('eden')">
                 <img src="./imges/button/shadow.webp" alt="Eden" class="icon">
-              
             </button>
             <button onclick="showBosses('pandaemonium')">
                 <img src="./imges/button/endwalker.webp" alt="Pandæmonium" class="icon">
-          
             </button>
             <button onclick="showBosses('dawntrail')">
                 <img src="./imges/button/dawn.webp" alt="Dawntrail" class="icon">
-        
             </button>
         </div>
-        
-     
-        <div id="boss-list"></div>
-        <div id="boss-details"></div> <!-- To display details about the boss -->
+
+        <div id="boss-list" class="hidden"></div>
+        <div id="boss-details" class="hidden"></div> <!-- To display details about the boss -->
        
+        <button id="back-button" class="hidden" onclick="goBack()">Back</button> <!-- Back Button -->
     </div>
 
     <!-- Footer -->

@@ -475,63 +475,101 @@ const bosses = {
     ]
 };
 
+let currentView = 'expansion-selection';
+
 function showBosses(expansion) {
     const bossList = document.getElementById('boss-list');
     const bossDetails = document.getElementById('boss-details');
-    
-    bossList.innerHTML = '';
-    bossDetails.innerHTML = '';
-    
-    const bossesToShow = bosses[expansion];
-    
-    bossList.innerHTML = `<h2>${expansion.charAt(0).toUpperCase() + expansion.slice(1)} Bosses</h2>`;
-    
-    let listHtml = '<ul>';
-    bossesToShow.forEach((boss, index) => {
-        listHtml += `<li><a href="#boss-details" onclick="showBossDetails('${expansion}', ${index})">${boss.name}</a></li>`;
-    });
-    listHtml += '</ul>';
-    
-    bossList.innerHTML += listHtml;
+    const expansionSelection = document.getElementById('expansion-selection');
+    const backButton = document.getElementById('back-button');
 
-    
-    bossList.scrollIntoView({ behavior: 'smooth' });
+    // Apply fade-out animation to expansion selection
+    expansionSelection.classList.add('fade-out');
+    setTimeout(() => {
+        expansionSelection.style.display = 'none';
+        bossList.classList.remove('fade-out');
+        bossList.classList.add('fade-in');
+        bossList.style.display = 'block';
+        backButton.style.display = 'block';  // Show back button
+        currentView = 'boss-list';
+
+        bossList.innerHTML = '';
+        bossDetails.innerHTML = '';
+
+        const bossesToShow = bosses[expansion];
+        bossList.innerHTML = `<h2>${expansion.charAt(0).toUpperCase() + expansion.slice(1)} Bosses</h2>`;
+
+        let listHtml = '<ul>';
+        bossesToShow.forEach((boss, index) => {
+            listHtml += `<li><a href="#boss-details" onclick="showBossDetails('${expansion}', ${index})">${boss.name}</a></li>`;
+        });
+        listHtml += '</ul>';
+        bossList.innerHTML += listHtml;
+
+        bossList.scrollIntoView({ behavior: 'smooth' });
+    }, 500);  // Match the animation duration
 }
 
 function showBossDetails(expansion, index) {
     const bossDetails = document.getElementById('boss-details');
-    bossDetails.innerHTML = '';
-    
-    const boss = bosses[expansion][index];
-    
-    bossDetails.innerHTML = `
-        <h3>${boss.name}</h3>
-        <img src="${boss.image}" alt="${boss.name}" class="boss-image">
-        <p>${boss.description}</p>
-    `;
-    
-    if (boss.skills) {
-        let skillsHtml = '<h4>Skills:</h4><ul>';
-        boss.skills.forEach(skill => {
-            skillsHtml += `<li><strong>${skill.name}:</strong> ${skill.description}</li>`;
-        });
-        skillsHtml += '</ul>';
-        
-        bossDetails.innerHTML += skillsHtml;
-    }
+    const bossList = document.getElementById('boss-list');
 
-    
-    bossDetails.scrollIntoView({ behavior: 'smooth' });
+    // Apply fade-out animation to boss list
+    bossList.classList.add('fade-out');
+    setTimeout(() => {
+        bossList.style.display = 'none';
+        bossDetails.classList.remove('fade-out');
+        bossDetails.classList.add('fade-in');
+        bossDetails.style.display = 'block';
+        currentView = 'boss-details';
+
+        const boss = bosses[expansion][index];
+        bossDetails.innerHTML = `
+            <h3>${boss.name}</h3>
+            <img src="${boss.image}" alt="${boss.name}" class="boss-image">
+            <p>${boss.description}</p>
+        `;
+
+        if (boss.skills) {
+            let skillsHtml = '<h4>Skills:</h4><ul>';
+            boss.skills.forEach(skill => {
+                skillsHtml += `<li><strong>${skill.name}:</strong> ${skill.description}</li>`;
+            });
+            skillsHtml += '</ul>';
+            bossDetails.innerHTML += skillsHtml;
+        }
+
+        bossDetails.scrollIntoView({ behavior: 'smooth' });
+    }, 500);  
 }
 
-window.addEventListener('load', () => {
-    const container = document.querySelector('.container');
-    const buttons = document.querySelectorAll('.buttons button');
+function goBack() {
+    const expansionSelection = document.getElementById('expansion-selection');
+    const bossList = document.getElementById('boss-list');
+    const bossDetails = document.getElementById('boss-details');
+    const backButton = document.getElementById('back-button');
 
-    // Add class to trigger the animation when the page loads
-    container.classList.add('animate');
-    buttons.forEach((button, index) => {
-        button.style.animationDelay = `${index * 0.2}s`; // Add delay to each button
-    });
-});
+    if (currentView === 'boss-details') {
+    
+        bossDetails.classList.add('fade-out');
+        setTimeout(() => {
+            bossDetails.style.display = 'none';
+            bossList.classList.remove('fade-out');
+            bossList.classList.add('fade-in');
+            bossList.style.display = 'block';
+            currentView = 'boss-list';
+        }, 500);  
+    } else if (currentView === 'boss-list') {
+        // Apply fade-out animation to boss list
+        bossList.classList.add('fade-out');
+        setTimeout(() => {
+            bossList.style.display = 'none';
+            expansionSelection.classList.remove('fade-out');
+            expansionSelection.classList.add('fade-in');
+            expansionSelection.style.display = 'block';
+            backButton.style.display = 'none';  
+            currentView = 'expansion-selection';
+        }, 500);  
+    }
+}
 
