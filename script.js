@@ -501,7 +501,10 @@ function showBosses(expansion) {
 
         let listHtml = '<ul>';
         bossesToShow.forEach((boss, index) => {
-            listHtml += `<li><a href="#boss-details" onclick="showBossDetails('${expansion}', ${index})">${boss.name}</a></li>`;
+            listHtml += `
+                <li>
+                    <button onclick="showBossDetails('${expansion}', ${index})" class="boss-button">${boss.name}</button>
+                </li>`;
         });
         listHtml += '</ul>';
         bossList.innerHTML += listHtml;
