@@ -1,12 +1,15 @@
-// โหลดเสียงเพลงที่ต้องการ
+// โหลดเพลงพื้นหลัง
 const backgroundMusic = new Audio("background.mp3");
 
 // ตั้งค่าให้เพลงวนซ้ำ (loop)
 backgroundMusic.loop = true;
 
-// เล่นเพลงเมื่อโหลดหน้าเว็บ
+// ฟังก์ชั่นเริ่มเล่นเพลงเมื่อหน้าเว็บโหลด
 window.addEventListener("load", function () {
-    backgroundMusic.play();
+    // ตรวจสอบว่าเพลงสามารถเล่นได้หรือไม่ก่อน
+    backgroundMusic.play().catch(function(error) {
+        console.log("ไม่สามารถเล่นเพลงได้อัตโนมัติ: " + error);
+    });
 });
 
 const quotes = {
