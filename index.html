@@ -1,57 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FFXIV Raid Bosses</title>
-    <link rel="stylesheet" href="style.css">
+    <title>สุ่มคำคม 12 ราศี</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <video autoplay muted loop id="background-video">
-        <source src="./background.mp4" type="video/mp4">
-    </video>
-    
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="#home"><img src="/imges/boss/Final_Fantasy_XIV_Online_logo.png" alt="Icon" class="nav-icon"></a></li>
-        </ul>
-    </nav>
-
     <div class="container">
-        <h1 id="home">FFXIV Raid Bosses</h1>
-        <p>Select an expansion to view its raid bosses:</p>
-        
-        <div id="expansion-selection" class="buttons">
-            <button onclick="showBosses('alexander')">
-                <img src="./imges/button/heavensward.webp" alt="Alexander" class="icon">
-            </button>
-            <button onclick="showBosses('omega')">
-                <img src="./imges/button/stormblood.webp" alt="Omega" class="icon">
-            </button>
-            <button onclick="showBosses('eden')">
-                <img src="./imges/button/shadow.webp" alt="Eden" class="icon">
-            </button>
-            <button onclick="showBosses('pandaemonium')">
-                <img src="./imges/button/endwalker.webp" alt="Pandæmonium" class="icon">
-            </button>
-            <button onclick="showBosses('dawntrail')">
-                <img src="./imges/button/dawn.webp" alt="Dawntrail" class="icon">
-            </button>
-        </div>
-
-        <div id="boss-list" class="hidden"></div>
-        <div id="boss-details" class="hidden"></div> <!-- To display details about the boss -->
-       
-        <button id="back-button" class="hidden" onclick="goBack()">Back</button> <!-- Back Button -->
+        <h1>สุ่มคำคม 12 ราศี</h1>
+        <select id="zodiacSelect">
+            <option value="">เลือก 12 ราศี</option>
+            <option value="aries">เมษ (21 มี.ค. - 19 เม.ย.)</option>
+            <option value="taurus">พฤษภ (20 เม.ย. - 20 พ.ค.)</option>
+            <option value="gemini">เมถุน (21 พ.ค. - 20 มิ.ย.)</option>
+            <option value="cancer">กรกฎ (21 มิ.ย. - 22 ก.ค.)</option>
+            <option value="leo">สิงห์ (23 ก.ค. - 22 ส.ค.)</option>
+            <option value="virgo">กันย์ (23 ส.ค. - 22 ก.ย.)</option>
+            <option value="libra">ตุลย์ (23 ก.ย. - 22 ต.ค.)</option>
+            <option value="scorpio">พิจิก (23 ต.ค. - 21 พ.ย.)</option>
+            <option value="sagittarius">ธนู (22 พ.ย. - 21 ธ.ค.)</option>
+            <option value="capricorn">มังกร (22 ธ.ค. - 19 ม.ค.)</option>
+            <option value="aquarius">กุมภ์ (20 ม.ค. - 18 ก.พ.)</option>
+            <option value="pisces">มีน (19 ก.พ. - 20 มี.ค.)</option>
+        </select>
+        <button id="randomQuoteBtn">สุ่มคำคม</button>
+        <p id="quoteDisplay" class="fade-in"></p>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 FFXIV Raid Guide. All Rights Reserved.</p>
-        <p><a href="#home">Back to top</a></p>
-    </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
