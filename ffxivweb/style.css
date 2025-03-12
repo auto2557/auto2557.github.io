@@ -1,169 +1,92 @@
-/* Reset some default styles */
-body, h1, h2, p, ul {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@600&display=swap');
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 0;
-    padding-bottom: 100px; /* เพิ่มพื้นที่ด้านล่างเพื่อป้องกันการทับซ้อนกับ footer */
-}
-
-/* Navigation Bar */
-nav {
-    background-color: #007bff;
-    padding: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-start;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    margin: 0;
-}
-
-nav ul li a {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-
-.nav-icon {
-    width: 150px; 
-    height: auto;
-    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
-    border-radius: 8px;
-}
-
-/* Main Content */
-.container {
-    max-width: 800px;
-    margin: 20px auto;
+    font-family: 'Noto Serif Thai', serif;
+    background: linear-gradient(135deg, #8B0000, #B22222);
+    text-align: center;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: gold;
+}
+
+.container {
+    background: #3b1b1b;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
+    max-width: 400px;
+    width: 90%;
+    border: 3px solid gold;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.05);
 }
 
 h1 {
-    text-align: center;
-    color: #333;
+    color: gold;
+    text-shadow: 2px 2px 5px #ffcc00;
 }
 
-.buttons {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 10px; 
-    justify-content: center; 
-    margin: 20px 0;
-}
-
-.buttons button {
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-    padding: 10px 20px; 
-    border: none;
-    background-color: #f0f0f0; 
-    cursor: pointer; 
-    font-size: 16px;
-    transition: background-color 0.3s; 
-    position: relative; 
-}
-
-.buttons button:hover {
-    background-color: #ddd; /
-}
-
-.buttons .icon {
-    width: 40%; 
-    height: auto; 
-    margin-right: 10px; 
-    display: block; 
-}
-
-
-
-
-
-
-
-/* Boss list and details */
-#boss-list {
-    font-size: 18px;
-    color: #333;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-li {
-    margin: 10px 0;
-    padding: 10px;
-    border-left: 4px solid #007bff;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    position: fixed;
-    bottom: 0;
+select, button {
     width: 100%;
-}
-
-footer a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Boss details section */
-.boss-details-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.boss-image {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.boss-details p {
-    text-align: justify;
-    margin-top: 15px;
-    color: #333;
+    padding: 10px;
+    margin-top: 10px;
     font-size: 16px;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
-h4 {
-    color: #007bff;
+select {
+    background: #a52a2a;
+    color: gold;
+    border: 2px solid gold;
+}
+
+button {
+    background: gold;
+    color: #8B0000;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #ffcc00;
+    transform: scale(1.05);
+}
+
+p {
+    font-size: 20px;
     margin-top: 20px;
+    color: gold;
+    font-weight: bold;
 }
 
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-ul li {
-    margin: 5px 0;
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .container {
+        max-width: 90%;
+    }
 }
