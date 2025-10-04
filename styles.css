@@ -1,92 +1,314 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@600&display=swap');
-
 body {
-    font-family: 'Noto Serif Thai', serif;
-    background: linear-gradient(135deg, #8B0000, #B22222);
-    text-align: center;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: gold;
+  background-color: #0e0e10;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.container {
-    background: #3b1b1b;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
-    max-width: 400px;
-    width: 90%;
-    border: 3px solid gold;
-    transition: transform 0.3s ease-in-out;
+.navbar {
+  background: linear-gradient(90deg, #1a1a1d, #111);
+}
+.navbar-brand {
+  color: #0ff !important;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.navbar-nav .nav-link {
+  color: #ccc !important;
+  margin-right: 15px;
+  transition: 0.3s;
+}
+.navbar-nav .nav-link:hover {
+  color: #0ff !important;
+  text-shadow: 0 0 8px #0ff;
+}
+.btn-zzz {
+  background: #0ff;
+  color: #000;
+  border: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.btn-zzz:hover {
+  background: #ff00ff;
+  color: #fff;
+  box-shadow: 0 0 15px #ff00ff;
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff;
+  animation: neonPulse 2s infinite alternate;
+}
+.card {
+  background-color: #1c1c1f;
+  border: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(0,255,255,0.5);
+}
+footer {
+  background-color: #111;
 }
 
-.container:hover {
-    transform: scale(1.05);
+/* --- Animation Keyframes --- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes neonPulse {
+  0%, 100% {
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+  }
+  50% {
+    text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff;
+  }
 }
 
-h1 {
-    color: gold;
-    text-shadow: 2px 2px 5px #ffcc00;
+
+footer {
+  width: 100%;
+  background-color: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 15px 0;
+  position: fixed;      
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 -2px 10px rgba(0,255,255,0.3);
 }
 
-select, button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    font-weight: bold;
+.skill-img {
+  width: 80px;      
+  height: 80px;     
+  object-fit: contain;
 }
 
-select {
-    background: #a52a2a;
-    color: gold;
-    border: 2px solid gold;
+/* --- Game Projects --- */
+.activity-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.activity-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.activity-item:hover img { transform: scale(1.1); }
+.activity-item .overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+.activity-item:hover .overlay { transform: translateY(0); }
+.overlay-text {
+  background: rgba(0,0,0,0.85);
+  padding: 15px;
+  text-align: center;
+  border-radius: 0 0 15px 15px;
 }
 
-button {
-    background: gold;
-    color: #8B0000;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
+/* --- Timeline --- */
+.timeline {
+  position: relative;
+  margin: 40px 0;
+  padding: 20px 0;
+}
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background: #0ff;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  box-shadow: 0 0 15px #0ff;
+}
+.timeline-item {
+  padding: 20px;
+  position: relative;
+  width: 50%;
+}
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
+.timeline-content {
+  background: rgba(0,0,0,0.85);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #0ff;
+  box-shadow: 0 0 20px rgba(0,255,255,0.5);
+}
+.timeline-content h4 { margin: 0 0 10px; font-size: 1.2rem; }
+.timeline-content p { margin: 0; font-size: 0.95rem; }
+@media screen and (max-width: 768px) {
+  .timeline::after { left: 10px; }
+  .timeline-item { width: 100%; left: 0 !important; padding-left: 40px; }
 }
 
-button:hover {
-    background: #ffcc00;
-    transform: scale(1.05);
+/* --- Preloader --- */
+#preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
-p {
+
+.glitch-text {
+  position: relative;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  animation: flicker 2s infinite;
+  text-shadow: 0 0 5px #00f2ff, 0 0 10px #00f2ff, 0 0 20px #00f2ff;
+  overflow: hidden;
+}
+
+/* Layer แสงซ้อนทับ */
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+}
+
+.glitch-text::before {
+  animation: glitchTop 2s infinite linear alternate-reverse;
+  color: #ff00c1;
+}
+
+.glitch-text::after {
+  animation: glitchBottom 1.5s infinite linear alternate-reverse;
+  color: #00fff9;
+}
+
+/* Neon Flicker */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 5px #00f2ff, 0 0 10px #00f2ff, 0 0 20px #00f2ff, 0 0 40px #00f2ff;
+  }
+  20%, 24%, 55% {
+    opacity: 0.6;
+    text-shadow: none;
+  }
+}
+
+/* Glitch Effect Top */
+@keyframes glitchTop {
+  0% {
+    clip: rect(0, 900px, 0, 0);
+    transform: translate(-2px, -2px);
+  }
+  20% {
+    clip: rect(0, 900px, 20px, 0);
+    transform: translate(-5px, -2px);
+  }
+  40% {
+    clip: rect(0, 900px, 10px, 0);
+    transform: translate(2px, 2px);
+  }
+  60% {
+    clip: rect(0, 900px, 30px, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    clip: rect(0, 900px, 0, 0);
+    transform: translate(0, 0);
+  }
+}
+
+/* Glitch Effect Bottom */
+@keyframes glitchBottom {
+  0% {
+    clip: rect(0, 900px, 0, 0);
+    transform: translate(2px, 2px);
+  }
+  20% {
+    clip: rect(10px, 900px, 50px, 0);
+    transform: translate(5px, 0);
+  }
+  40% {
+    clip: rect(20px, 900px, 80px, 0);
+    transform: translate(-2px, 0);
+  }
+  60% {
+    clip: rect(5px, 900px, 60px, 0);
+    transform: translate(0, 2px);
+  }
+  100% {
+    clip: rect(0, 900px, 0, 0);
+    transform: translate(0, 0);
+  }
+}
+
+
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column; /* เรียงปุ่มเป็นแนวตั้ง */
+  gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+  z-index: 9999;
+}
+
+.floating-buttons .btn {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-buttons .btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+}
+
+/* ✅ Responsive ปรับขนาดปุ่มอัตโนมัติ */
+@media (max-width: 768px) {
+  .floating-buttons .btn {
+    width: 45px;
+    height: 45px;
     font-size: 20px;
-    margin-top: 20px;
-    color: gold;
-    font-weight: bold;
+  }
 }
 
-/* Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@media (max-width: 480px) {
+  .floating-buttons {
+    bottom: 15px;
+    right: 15px;
+  }
+  .floating-buttons .btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
 }
 
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 0.8s ease-out forwards;
-}
-
-/* Responsive */
-@media (max-width: 500px) {
-    .container {
-        max-width: 90%;
-    }
-}
